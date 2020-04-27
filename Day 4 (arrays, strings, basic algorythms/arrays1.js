@@ -23,4 +23,34 @@ const powerOfTwo = (arr, n) => {
   return arr;
 };
 
-console.log(powerOfTwo([], 10));
+const printArray = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (i === arr.length - 1) {
+      process.stdout.write(arr[i].toString());
+    } else {
+      process.stdout.write(arr[i] + ', ');
+    }
+  }
+  console.log();
+};
+// let numbers = powerOfTwo([], 10)
+printArray(powerOfTwo([], 10));
+
+const twoDigitsThree = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    // const a = arr[i];
+    if ((Math.abs(arr[i]) >= 10 && Math.abs(arr[i]) < 100) && arr[i] % 3 === 0) {
+      console.log(arr[i]);
+    }
+  }
+};
+
+const twoDigitsThreeUpdated = (arr) => {
+  for (const a of arr) {
+    if ((Math.abs(a) >= 10 && Math.abs(a) < 100) && a % 3 === 0) {
+      console.log(a);
+    }
+  }
+};
+
+twoDigitsThreeUpdated([1, 3, 33, 66, 12, 43, 13, -13, -12, -66]);
