@@ -23,15 +23,15 @@ const containsElement2 = (arr, element) => {
   while (i < arr.length && arr[i] !== element) {
     i++;
   }
-  return i < arr.length;
-  // if (i < arr.length) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
+  // return i < arr.length;
+  if (i < arr.length) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
-console.log('Eldöntés', containsElement2([1, 2, 3], 1));
+console.log('Eldöntés', containsElement2([1, 2, 3], 3));
 console.log('Eldöntés JS-ben', [1, 2, 3].includes(1));
 
 // Keresés
@@ -97,8 +97,7 @@ const selectEvens = (src) => {
   let j = 0;
   for (let i = 0; i < src.length; i++) {
     if (src[i] % 2 === 0) {
-      out[j] = src[i]; // out.push(src[i]);
-      j++;
+      out[j++] = src[i]; // out.push(src[i]);
     }
   }
   return out;
