@@ -34,7 +34,32 @@ const fill2dArray = (arr) => {
     }
   }
 };
+// Összegzés tétel
+const sum2dArray = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      sum += arr[i][j];
+    }
+  }
+  return sum;
+};
 
-const arr = generate2dArray(5, 5); // Tömb létrehozása
+// Maximum
+const max2dArr = (arr) => {
+  let max = arr[0][0];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i][j] > max) {
+        max = arr[i][j];
+      }
+    }
+  }
+  return max;
+};
+
+const arr = generate2dArray(3, 3); // Tömb létrehozása
 fill2dArray(arr); // Feltöltés random számokkal
 print2dArray(arr); // Kiíratás
+console.log('sum:', sum2dArray(arr));
+console.log('max:', max2dArr(arr));
