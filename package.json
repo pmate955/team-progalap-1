@@ -9,7 +9,10 @@
   "author": "Mate Pinter",
   "license": "ISC",
   "dependencies": {
+    "axel": "0.0.3",
     "chalk": "^4.0.0",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "table": "^5.4.6",
+    "terminal-kit": "^1.35.2"
   }
 }

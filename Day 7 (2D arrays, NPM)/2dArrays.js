@@ -42,6 +42,7 @@ const sum2dArray = (arr) => {
       sum += arr[i][j];
     }
   }
+  max2dArr(arr);
   return sum;
 };
 
