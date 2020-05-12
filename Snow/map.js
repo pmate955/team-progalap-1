@@ -1,4 +1,5 @@
 const table = require('table');
+const axel = require('axel');
 
 const generateMap = (width, height) => {
   const arr = new Array(height);
@@ -45,10 +46,28 @@ const printMap = (arr) => {
   console.log(table.table(arr));
 };
 
+const printMapAxel = (arr) => {
+  axel.clear();
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      axel.bg(0, 0, 200);
+      if (arr[i][j] === ' ') {
+        axel.point(j + 1, i + 1);
+      }
+      if (arr[i][j] === '*') {
+        axel.fg(255, 255, 255);
+        axel.text(j + 1, i + 1, '*');
+      }
+    }
+    axel.bg(0, 0, 0);
+  }
+};
+
 module.exports = {
   generateMap,
   fillMap,
   addSnow,
   falling,
-  printMap
+  printMap,
+  printMapAxel
 };
